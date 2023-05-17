@@ -1,0 +1,10 @@
+Documentation:
+  Enabled: false
+
+AllCops:
+  Exclude:
+    - 'db/schema.rb'
+    - "bin/bundle"
+
+Layout/HashAlignment:
+  EnforcedColonStyle: table

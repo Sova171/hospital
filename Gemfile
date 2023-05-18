@@ -26,6 +26,7 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 gem 'bootsnap', require: false
 
 gem 'activeadmin'
+gem 'activeadmin_addons'
 gem 'bootstrap'
 gem 'devise'
 gem 'faker'

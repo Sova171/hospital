@@ -1,2 +1,6 @@
-%h1 Doctors#index
-%p Find me in app/views/doctors/index.html.haml
+- @facade.doctors.each do |doctor|
+  = doctor.name
+  %br
+  - doctor.patients.each do |patient|
+    = patient.name
+  %hr

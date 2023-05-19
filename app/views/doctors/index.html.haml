@@ -1,6 +1,16 @@
+Hello
+
 - @facade.doctors.each do |doctor|
   = doctor.name
   %br
   - doctor.patients.each do |patient|
     = patient.name
   %hr
+
+= link_to 'Log in', new_doctor_session_path
+= link_to 'destroy', destroy_doctor_session_path
+
+- if doctor_signed_in?
+  hELLO
+  = current_doctor.name
+  = current_doctor.phone

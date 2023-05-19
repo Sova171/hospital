@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 ActiveAdmin.register Doctor do
-  permit_params :name, :avatar, :category_id
+  permit_params :name, :avatar, :category_id, :phone, :password, :password_confirmation
 
   index do
     selectable_column
@@ -41,10 +41,18 @@ ActiveAdmin.register Doctor do
       f.input :name
       f.input :avatar, as: :file
       f.input :category, collection: Category.all.map { |category| [category.speciality, category.id] }
+      f.input :phone, placeholder: I18n.t('model.doctor.notification')
+      if f.object.new_record?
+        f.input :password
+        f.input :password_confirmation
+      else
+        f.input :password, input_html: { value: '********' }, required: false
+        f.input :password_confirmation, input_html: { value: '********' }, required: false
+      end
     end
     f.actions
   end
 
   filter :name
-  filter :category, collection: Category.all.map { |category| [category.speciality, category.id] }
+  filter :category, collection: proc { Category.pluck(:speciality, :id) }, multiple: true
 end

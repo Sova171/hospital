@@ -1,7 +1,9 @@
+# frozen_string_literal: true
+
 FactoryBot.define do
   factory :appointment do
-    request { "MyString" }
-    recommendation { "MyText" }
+    request { 'MyString' }
+    recommendation { 'MyText' }
     doctor { nil }
     patient { nil }
   end

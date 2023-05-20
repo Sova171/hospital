@@ -4,7 +4,13 @@ Documentation:
 AllCops:
   Exclude:
     - 'db/schema.rb'
-    - "bin/bundle"
+    - 'bin/bundle'
+    - 'config/**/*'
+    - 'db/migrate/**/*'
+
+Metrics/BlockLength:
+  Exclude:
+    - 'app/admin/doctors.rb'
 
 Layout/HashAlignment:
   EnforcedColonStyle: table

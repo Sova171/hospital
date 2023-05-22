@@ -6,13 +6,23 @@
   hello
   = current_patient.name
 
+.dropdown
+  %button#filter-categories.btn.dropdown-toggle{"aria-expanded" => "false", "data-bs-toggle" => "dropdown", type: "button"}
+    = t('.categories')
+  %ul.dropdown-menu{ "aria-labelledby" => "filter-categories" }
+    %li
+      = link_to t('.all'), root_path, class: "dropdown-item"
+    - @facade.categories.each do |category|
+      %li
+        = link_to category, doctors_path(category:), class: "dropdown-item"
+
 .row.row-cols-1.row-cols-md-2.row-cols-lg-3
   - @facade.doctors.each do |doctor|
     .col.mx-auto
       .card.text-center.mb-3.border-secondary
         = link_to doctor_path(doctor) do
           %h5.card-title
-            = doctor.category.speciality
+            = doctor.category.speciality if doctor.category.present?
           - if doctor.avatar.attached?
             = image_tag( doctor.avatar, height: '250pt' )
           - else

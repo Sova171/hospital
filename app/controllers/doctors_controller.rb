@@ -3,7 +3,7 @@
 class DoctorsController < ApplicationController
   before_action :find_doctor, only: :show
   def index
-    @facade = ::Doctors::IndexFacade.new
+    @facade = ::Doctors::IndexFacade.new(category: params[:category])
   end
 
   def show

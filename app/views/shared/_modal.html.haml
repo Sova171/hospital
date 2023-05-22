@@ -1,0 +1,18 @@
+%button.btn.btn-primary{"data-toggle" => "modal", "data-target" => "#myModal", "type" => "button", "id" => "openModal"} Open Modal
+
+.modal.fade#myModal{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", "role" => "dialog", "tabindex" => "-1"}
+  .modal-dialog.modal-dialog-centered
+    .modal-content
+      / Modal Header
+      .modal-header
+        %h5.modal-title#myModalLabel Modal Title
+
+      / Modal Body - Block 1
+      .modal-body
+        %h6 Block 1
+        %p This is the first block of content in the modal.
+
+      / Modal Footer - First Block
+      .modal-footer
+        %button.btn.btn-secondary{"data-dismiss" => "modal", "type" => "button"} Close
+        %button.btn.btn-primary Save changes

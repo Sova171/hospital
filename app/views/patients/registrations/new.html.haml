@@ -1,0 +1,26 @@
+%h2= t('form.signed_up.signed_up')
+= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+  = render "patients/shared/error_messages", resource: resource
+
+  .form-floating.mb-3
+    = f.text_field :name, autofocus: true, class: 'form-control', id: 'floatingName', placeholder: t('form.signed_up.name')
+    %label{ for: 'floatingName' }= t('form.signed_up.name')
+
+  .form-floating.mb-3
+    = f.phone_field :phone, class: 'form-control', id: 'floatingPhone', placeholder: t('form.shared.phone')
+    %label{ for: 'floatingPhone' }= t('form.shared.phone')
+
+  .form-floating.mb-3
+    - if @minimum_password_length
+      %em
+        (#{@minimum_password_length} characters minimum)
+    = f.password_field :password, autocomplete: 'new-password', class: 'form-control', id: 'floatingPassword', placeholder: t('form.shared.password')
+    %label{ for: 'floatingPassword' }= t('form.shared.password')
+
+  .form-floating.mb-3
+    = f.password_field :password_confirmation, autocomplete: 'new-password', class: 'form-control', id: 'floatingPasswordConfirmation', placeholder: t('form.signed_up.password_confirmation')
+    %label{ for: 'floatingPasswordConfirmation' }= t('form.signed_up.password_confirmation')
+
+  .actions
+    = f.submit t('form.signed_up.signed_up'), class: 'btn btn-outline-success'
+= render "patients/shared/links"

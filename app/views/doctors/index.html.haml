@@ -1,16 +1,21 @@
-Hello
-
-- @facade.doctors.each do |doctor|
-  = doctor.name
-  %br
-  - doctor.patients.each do |patient|
-    = patient.name
-  %hr
-
-= link_to 'Log in', new_doctor_session_path
-= link_to 'destroy', destroy_doctor_session_path
-
 - if doctor_signed_in?
-  hELLO
+  hello
   = current_doctor.name
-  = current_doctor.phone
+
+- if patient_signed_in?
+  hello
+  = current_patient.name
+
+.row.row-cols-1.row-cols-md-2.row-cols-lg-3
+  - @facade.doctors.each do |doctor|
+    .col.mx-auto
+      .card.text-center.mb-3.border-secondary
+        = link_to doctor_path(doctor) do
+          %h5.card-title
+            = doctor.category.speciality
+          - if doctor.avatar.attached?
+            = image_tag( doctor.avatar, height: '250pt' )
+          - else
+            = image_tag( 'NoAvatarImg.png', height: '250pt' )
+          %p.card-text
+            = doctor.name

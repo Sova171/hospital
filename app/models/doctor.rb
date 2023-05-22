@@ -8,7 +8,7 @@ class Doctor < ApplicationRecord
   # validates
   validates :name, presence: true
   validates :phone, presence: true, uniqueness: true
-  validates_format_of :phone, with: /\A\+380\d{9}\z/, message: I18n.t('model.doctor.notification')
+  validates_format_of :phone, with: /\A\+380\d{9}\z/, message: I18n.t('model.phone.notification')
   validates :password, presence: true, confirmation: true
 
   # relations

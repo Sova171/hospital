@@ -1,4 +1,20 @@
 en:
   model:
-    doctor:
+    phone:
       notification: 'should be in the format +380XXXXXXXXX'
+  form:
+    signed_in:
+      log_in: 'Log in'
+      log_in_doctor: 'Log in doctor'
+      log_in_patient: 'Log in patient'
+    signed_up:
+      registration: 'Registration'
+      name: 'Name'
+      password_confirmation: 'Password confirmation'
+      signed_up: 'Sign up'
+    shared:
+      phone: 'Phone'
+      password: 'Password'
+  navbar:
+    doctors: 'Doctors'
+    hospital: 'Hospital'

@@ -1,0 +1,14 @@
+.card-title.d-flex.justify-content-between
+  %div
+    %h5
+      = @facade.doctor_name
+    %br/
+    = @facade.doctor_category.speciality
+    %br/
+    = render 'shared/modal'
+  %div
+    - if @facade.doctor_avatar.attached?
+      = image_tag @facade.doctor_avatar, width: "250pt"
+    - else
+      = image_tag("NoAvatarImg.png", option = {height: "250pt"})
+= link_to 'back', root_path

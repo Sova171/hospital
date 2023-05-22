@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-class AddDeviseToDoctors < ActiveRecord::Migration[7.0]
+class AddDeviseToPatients < ActiveRecord::Migration[7.0]
   def self.up
-    change_table :doctors do |t|
+    change_table :patients do |t|
       ## Database authenticatable
       t.string :phone,              null: false, default: ''
       t.string :encrypted_password, null: false, default: ''
@@ -32,14 +32,15 @@ class AddDeviseToDoctors < ActiveRecord::Migration[7.0]
       # t.string   :unlock_token # Only if unlock strategy is :email or :both
       # t.datetime :locked_at
 
+
       # Uncomment below if timestamps were not included in your original model.
       # t.timestamps null: false
     end
 
-    add_index :doctors, :phone,                unique: true
-    # add_index :doctors, :reset_password_token, unique: true
-    # add_index :doctors, :confirmation_token,   unique: true
-    # add_index :doctors, :unlock_token,         unique: true
+    add_index :patients, :phone,                unique: true
+    # add_index :patients, :reset_password_token, unique: true
+    # add_index :patients, :confirmation_token,   unique: true
+    # add_index :patients, :unlock_token,         unique: true
   end
 
   def self.down

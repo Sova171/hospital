@@ -2,6 +2,7 @@
 //= require jquery3
 //= require popper
 //= require bootstrap
+//= require modal
 
 import "@hotwired/turbo-rails"
 import "controllers"

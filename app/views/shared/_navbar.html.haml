@@ -1,0 +1,30 @@
+%nav.navbar.navbar-expand-lg.navbar-light.bg-light
+  .container-fluid
+    = link_to t('navbar.hospital'), root_path, class: 'navbar-brand'
+    %button.navbar-toggler{"type" => "button", "data-bs-toggle" => "collapse", "data-bs-target" => "#navbarNav", "aria-controls" => "navbarNav", "aria-expanded" => "false", "aria-label" => "Toggle navigation"}
+      %span.navbar-toggler-icon
+    #navbarNav.collapse.navbar-collapse
+      %ul.navbar-nav
+        %li.nav-item
+          = link_to t('navbar.doctors'), root_path, class: 'nav-link'
+      %ul.navbar-nav.ms-auto
+        - if patient_signed_in?
+          %li.nav-item
+            = link_to t('navbar.signed_out'), destroy_patient_session_path, class: 'nav-link'
+
+        - elsif doctor_signed_in?
+          %li.nav-item
+            = link_to t('navbar.signed_out'), destroy_doctor_session_path, class: 'nav-link'
+
+        -else
+          .dropdown
+            %button#filter-categories.btn.dropdown-toggle{"aria-expanded" => "false", "data-bs-toggle" => "dropdown", type: "button"}
+              = t('form.signed_in.log_in')
+            %ul.dropdown-menu{ "aria-labelledby" => "filter-categories" }
+              %li
+                = link_to t('form.signed_in.log_in_doctor'), new_doctor_session_path, class: "dropdown-item"
+              %li
+                = link_to t('form.signed_in.log_in_patient'), new_patient_session_path , class: "dropdown-item"
+              %div.dropdown-divider
+              %li
+                = link_to t('form.signed_up.registration'), new_patient_registration_path, class: "dropdown-item"

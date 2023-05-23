@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  devise_for :patients, controllers: { sessions: 'patients/sessions' }
+  devise_for :patients, controllers: { sessions: 'patients/sessions', registrations: 'patients/registrations' }
   devise_for :doctors, controllers: { sessions: 'doctors/sessions' }
   devise_for :admin_users, ActiveAdmin::Devise.config
 

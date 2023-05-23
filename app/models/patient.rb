@@ -4,7 +4,7 @@ class Patient < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :rememberable, authentication_keys: %i[phone name]
+         :rememberable, authentication_keys: %i[phone]
 
   # validates
   validates :name, presence: true

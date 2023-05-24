@@ -15,6 +15,12 @@ en:
     shared:
       phone: 'Phone'
       password: 'Password'
+  shared:
+    modal:
+      problem: 'describe your problem'
+      appointment: 'Create appointment'
+      create_button: 'Submit'
+      title: 'Make appointment'
   navbar:
     doctors: 'Doctors'
     hospital: 'Hospital'

@@ -8,5 +8,11 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
 
   root 'doctors#index'
-  resources :doctors
+  resources :doctors do
+    post 'create_appointment', on: :member
+  end
+
+  resources :profiles, only: [:show] do
+    put 'update_appointment/:appointment_id', to: 'profiles#update_appointment', as: 'update_appointment'
+  end
 end

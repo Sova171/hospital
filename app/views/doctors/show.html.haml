@@ -5,7 +5,12 @@
     %br/
     = @facade.doctor_category.speciality
     %br/
-    = render 'shared/modal'
+    - if user_signed_in?
+      %br/
+      - if @facade.busy
+        Sorry doctor busy
+      - else
+        = render 'shared/modal', doctor: @facade.doctor, appointment: @facade.appointment
   %div
     - if @facade.doctor_avatar.attached?
       = image_tag @facade.doctor_avatar, width: "250pt"

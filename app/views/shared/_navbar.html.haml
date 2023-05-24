@@ -7,6 +7,10 @@
       %ul.navbar-nav
         %li.nav-item
           = link_to t('navbar.doctors'), root_path, class: 'nav-link'
+        %li.nav-item
+          - if user_signed_in?
+            = link_to t('navbar.profile'), profile_path(current_user), class: 'nav-link'
+
       %ul.navbar-nav.ms-auto
         - if patient_signed_in?
           %li.nav-item

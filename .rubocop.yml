@@ -4,6 +4,10 @@ Documentation:
 Style/ClassAndModuleChildren:
   Enabled: false
 
+Lint/MissingSuper:
+  Exclude:
+    - 'app/services/**/*'
+
 AllCops:
   Exclude:
     - 'db/schema.rb'

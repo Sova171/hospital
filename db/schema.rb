@@ -73,7 +73,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_20_115226) do
     t.text "recommendation"
     t.bigint "doctor_id", null: false
     t.bigint "patient_id", null: false
-    t.string "status"
+    t.boolean "closed", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["doctor_id"], name: "index_appointments_on_doctor_id"

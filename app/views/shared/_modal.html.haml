@@ -1,18 +1,16 @@
-%button.btn.btn-primary{"data-toggle" => "modal", "data-target" => "#myModal", "type" => "button", "id" => "openModal"} Open Modal
+%button.btn.btn-primary{"data-toggle" => "modal", "data-target" => "#myModal", "type" => "button", "id" => "openModal"}= t('shared.modal.title')
 
 .modal.fade#myModal{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", "role" => "dialog", "tabindex" => "-1"}
   .modal-dialog.modal-dialog-centered
     .modal-content
       / Modal Header
       .modal-header
-        %h5.modal-title#myModalLabel Modal Title
+        %h5.modal-title#myModalLabel= t('shared.modal.appointment')
 
       / Modal Body - Block 1
       .modal-body
-        %h6 Block 1
-        %p This is the first block of content in the modal.
+        = form_for [doctor, appointment], url: create_appointment_doctor_path(doctor), method: :post do |f|
+          = f.text_field :request, class: 'form-control', placeholder: t('shared.modal.problem')
+          %br
+          = f.submit t('shared.modal.create_button'), class: 'btn btn-outline-success'
 
-      / Modal Footer - First Block
-      .modal-footer
-        %button.btn.btn-secondary{"data-dismiss" => "modal", "type" => "button"} Close
-        %button.btn.btn-primary Save changes

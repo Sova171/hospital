@@ -23,3 +23,10 @@
   text-decoration: none;
   color: black;
 }
+
+button.acc-btn {
+  display: grid;
+  grid-template-columns: 1fr max-content max-content;
+  align-items: center;
+  grid-gap: 10px;
+}

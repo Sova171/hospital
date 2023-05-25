@@ -9,11 +9,11 @@ module Profiles
     end
 
     def opened_appointments
-      @opened_appointments ||= user.appointments.where(closed: false)
+      @opened_appointments ||= user.appointments.where(closed: false).decorate
     end
 
     def closed_appointments
-      @closed_appointments ||= user.appointments.where(closed: true)
+      @closed_appointments ||= user.appointments.where(closed: true).decorate
     end
   end
 end

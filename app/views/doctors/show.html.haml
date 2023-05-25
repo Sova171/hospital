@@ -5,10 +5,10 @@
     %br/
     = @facade.doctor_category.speciality
     %br/
-    - if user_signed_in?
+    - if can?(:create, Appointment) && current_user.is_a?(Patient)
       %br/
-      - if @facade.busy
-        Sorry doctor busy
+      - if @facade.doctor.busy?
+        = t('doctor.index.busy')
       - else
         = render 'shared/modal', doctor: @facade.doctor, appointment: @facade.appointment
   %div

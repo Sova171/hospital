@@ -12,10 +12,6 @@ module Doctors
       Appointment.new
     end
 
-    def busy
-      doctor.appointments.count > 9
-    end
-
     delegate :name, :avatar, :category, to: :doctor, prefix: true
   end
 end

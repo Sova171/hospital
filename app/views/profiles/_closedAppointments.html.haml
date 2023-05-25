@@ -1,0 +1,19 @@
+- if appointments.present?
+  %h5= t('profile.show.closed_appointments')
+  #accordionPanelsStayOpenExample.accordion
+    - @facade.closed_appointments.each_with_index  do |appointment, index|
+      .accordion-item
+        %h2.accordion-header
+          %button.acc-btn.accordion-button.collapsed{"aria-controls" => "panelsStayOpen-collapse#{(index+1).to_s}", "aria-expanded" => "false", "data-bs-target" => "#panelsStayOpen-collapse#{(index+1).to_s}", "data-bs-toggle" => "collapse", type: "button"}
+            %span
+              = t('profile.show.request')
+              = appointment.request
+            %span.text-muted
+              = appointment.appointment_date
+        .accordion-collapse.collapse{id: "panelsStayOpen-collapse#{(index+1).to_s}"}
+          .accordion-body
+            = t('profile.show.recommendation')
+            = appointment.recommendation
+            %br
+            .text-muted
+              = appointment.reference(current_user)

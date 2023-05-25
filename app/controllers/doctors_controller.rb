@@ -8,12 +8,10 @@ class DoctorsController < ApplicationController
   end
 
   def show
-    @facade = ::Doctors::ShowFacade.new(doctor: @doctor)
+    @facade = ::Doctors::ShowFacade.new(doctor: @doctor.decorate)
   end
 
   def create_appointment
-    # @appointment = @doctor.appointments.build(appointment_params)
-    # @appointment.patient = current_patient
     @appointment = ::Appointments::Create.call(
       doctor: @doctor, appointment_params:, patient: current_patient
     )

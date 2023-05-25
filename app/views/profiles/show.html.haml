@@ -2,23 +2,6 @@
 %br
 = current_user.phone
 
-- if @facade.opened_appointments.present?
-  %h5 Open Appointments
-  - @facade.opened_appointments.each do |appointment|
-    Request:
-    = appointment.request
-    %br
-    - if doctor_signed_in?
-      = form_for appointment, url: profile_update_appointment_path(current_doctor, appointment), method: :put do |f|
-        = f.text_field :recommendation, value: appointment.recommendation
-        = f.submit 'Update Recommendation'
+= render 'profiles/openAppointments', appointments: @facade.opened_appointments
 
-- if @facade.closed_appointments.present?
-  %h5 Closed Appointments
-  - @facade.closed_appointments.each do |appointment|
-    Request:
-    = appointment.request
-    %br
-    Recommendation:
-    = appointment.recommendation
-    %br
+= render 'profiles/closedAppointments', appointments: @facade.closed_appointments

@@ -12,7 +12,7 @@ Rails.application.routes.draw do
     post 'create_appointment', on: :member
   end
 
-  resources :profiles, only: [:show] do
+  resource :profile, only: [:show] do
     put 'update_appointment/:appointment_id', to: 'profiles#update_appointment', as: 'update_appointment'
   end
 end

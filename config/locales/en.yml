@@ -1,4 +1,6 @@
 en:
+  hello_doctor: 'Hello doctor'
+  hello_patient: 'Hello patient'
   model:
     phone:
       notification: 'should be in the format +380XXXXXXXXX'
@@ -24,3 +26,13 @@ en:
   navbar:
     doctors: 'Doctors'
     hospital: 'Hospital'
+  doctor:
+    index:
+      busy: 'Sorry doctor busy'
+  profile:
+    show:
+      request: 'Request:'
+      recommendation: 'Recommendation:'
+      open_appointments: 'Open Appointments'
+      closed_appointments: 'Closed Appointments'
+      update_button: 'Give recommendations'

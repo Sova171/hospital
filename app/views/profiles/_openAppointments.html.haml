@@ -10,7 +10,7 @@
         %span.text-muted.ms-auto
           = appointment.reference(current_user)
       - if doctor_signed_in?
-        = form_for appointment, url: profile_update_appointment_path(current_doctor, appointment), method: :put do |f|
+        = form_for appointment, url: update_appointment_profile_path(appointment), method: :put do |f|
           %div.d-flex.justify-content-between.mb-3.mx-2
             = f.text_field :recommendation, value: appointment.recommendation, class: 'form-control', style: 'width: 80%'
             = f.submit t('profile.show.update_button'), class: 'btn btn-outline-success', style: 'width: 20%'

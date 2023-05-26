@@ -19,5 +19,9 @@ Metrics/BlockLength:
   Exclude:
     - 'app/admin/doctors.rb'
 
+Metrics/MethodLength:
+  Exclude:
+    - 'app/models/ability.rb'
+
 Layout/HashAlignment:
   EnforcedColonStyle: table

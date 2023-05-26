@@ -26,6 +26,7 @@ en:
   navbar:
     doctors: 'Doctors'
     hospital: 'Hospital'
+    profile: 'Profile'
   doctor:
     index:
       busy: 'Sorry doctor busy'

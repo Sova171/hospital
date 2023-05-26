@@ -17,9 +17,9 @@
             = link_to t('navbar.signed_out'), destroy_session_path(current_user), class: 'nav-link'
         -else
           .dropdown
-            %button#filter-categories.btn.dropdown-toggle{"aria-expanded" => "false", "data-bs-toggle" => "dropdown", type: "button"}
+            %button#filter-session.btn.dropdown-toggle{"aria-expanded" => "false", "data-bs-toggle" => "dropdown", type: "button"}
               = t('form.signed_in.log_in')
-            %ul.dropdown-menu{ "aria-labelledby" => "filter-categories" }
+            %ul.dropdown-menu{ "aria-labelledby" => "filter-session" }
               %li
                 = link_to t('form.signed_in.log_in_doctor'), new_doctor_session_path, class: "dropdown-item"
               %li

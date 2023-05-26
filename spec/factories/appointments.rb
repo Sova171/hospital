@@ -2,9 +2,10 @@
 
 FactoryBot.define do
   factory :appointment do
-    request { 'MyString' }
-    recommendation { 'MyText' }
-    doctor { nil }
-    patient { nil }
+    request { Faker::JapaneseMedia::OnePiece.quote }
+    recommendation { nil }
+    doctor
+    patient
+    closed { false }
   end
 end

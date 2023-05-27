@@ -7,7 +7,7 @@ def create_appointment
     request:        Faker::Quote.singular_siegler,
     doctor:         Doctor.all.sample,
     patient:        Patient.all.sample,
-    recommendation: Faker::JapaneseMedia::OnePiece.quote
+    recommendation: nil
   )
   appointment.save!
 end

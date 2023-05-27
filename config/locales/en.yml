@@ -37,3 +37,6 @@ en:
       open_appointments: 'Open Appointments'
       closed_appointments: 'Closed Appointments'
       update_button: 'Give recommendations'
+  appointment:
+    create_success: 'Appointment created successfully.'
+    create_failed: 'Appointment creation failed.'

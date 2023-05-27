@@ -9,7 +9,8 @@ class ProfilesController < ApplicationController
 
   def update_appointment
     ::Appointments::Update.call(appointment: @appointment, appointment_params:)
-    redirect_to profile_path(current_doctor), notice: 'Appointment updated successfully.'
+
+    redirect_to profile_path(current_doctor)
   end
 
   private

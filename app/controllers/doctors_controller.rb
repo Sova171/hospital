@@ -17,10 +17,12 @@ class DoctorsController < ApplicationController
     )
 
     if @appointment.save
-      redirect_to doctor_path(@doctor), notice: 'Appointment created successfully.'
+      flash[:notice] = I18n.t('appointment.create_success')
     else
-      redirect_to doctor_path(@doctor), alert: 'Appointment creation failed.'
+      flash[:alert] = I18n.t('appointment.create_failed')
     end
+
+    redirect_to doctor_path(@doctor)
   end
 
   private

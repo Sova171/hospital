@@ -27,6 +27,7 @@ gem 'bootsnap', require: false
 
 gem 'activeadmin'
 gem 'activeadmin_addons'
+gem "aws-sdk-s3", require: false
 gem 'bootstrap'
 gem 'cancancan'
 gem 'devise'
